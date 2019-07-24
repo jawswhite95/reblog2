@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">뽀시래기 룰루 사진展</h1>
+            <p class="lead text-muted">우리 룰루 너무 귀여워 죽겠다..</p>
+            
+        </div>
+    </section>
+
+    
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                
+            {% for portfolio in portfolios.all %}
+                <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="{{ portfolio.image.url }}" alt=" Card image cap">
+                    <div class="card-body">
+                    <h4>{{ portfolio.title }}</h4>
+                    <p class="card-text">{{ portfolio.description }}</p>
+                    </div>
+                </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
